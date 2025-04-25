@@ -46,9 +46,24 @@ const getIncidentById = async (req, res) => {
     }
 }
 
+// delete incident by id
+const deleteIncidentById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const incident = await AiSafetyModel.findByIdAndDelete(id);
+        if (!incident) {
+            return res.status(404).json({ message: 'Incident not found' });
+        }
+        res.status(200).json({ message: 'Incident deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Internal server error', error });
+    }
+}
+
 
 module.exports = {
     createIncident,
     getIncidents,
     getIncidentById,
+    deleteIncidentById,
 };

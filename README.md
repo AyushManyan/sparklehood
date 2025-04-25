@@ -1,4 +1,4 @@
-# Sparklehood AI Safety Incident Tracker
+# Sparklehood AI Safety Incident 
 
 ## Description
 The Sparklehood AI Safety Incident Tracker is a Node.js-based application that allows users to log and manage AI safety incidents. It provides an API to create and track incidents with details such as name, description, severity, and the time of reporting.
@@ -49,11 +49,26 @@ The Sparklehood AI Safety Incident Tracker is a Node.js-based application that a
 - `201 Created`: Returns the created incident.
 - `400 Bad Request`: Returns an error message if validation fails.
 
+**Example Result:**
+Below is an example image showing the result of this endpoint:
+
+![Delete Incident Result](./testingImage/post.png)
+
+
+
+
 ### GET /api/v1/incidents
 **Description:** Retrieve all AI safety incidents.  
 **Response:**
 - `200 OK`: Returns a list of all incidents.
 - `500 Internal Server Error`: Returns an error message if something goes wrong.
+
+**Example Result:**
+Below is an example image showing the result of this endpoint:
+
+![Delete Incident Result](./testingImage/allIncident.png)
+
+
 
 ### GET /api/v1/incidents/:id
 **Description:** Retrieve a specific AI safety incident by its ID.  
@@ -64,6 +79,29 @@ The Sparklehood AI Safety Incident Tracker is a Node.js-based application that a
 - `200 OK`: Returns the incident details.
 - `404 Not Found`: Returns an error message if the incident is not found.
 - `500 Internal Server Error`: Returns an error message if something goes wrong.
+
+**Example Result:**
+Below is an example image showing the result of this endpoint:
+
+![Delete Incident Result](./testingImage/incidentByID.png)
+
+
+
+### DELETE /api/v1/incidents/:id
+**Description:** Delete a specific AI safety incident by its ID.  
+**Path Parameter:**
+- `id`: The unique identifier of the incident.
+
+**Response:**
+- `200 OK`: Returns a success message upon successful deletion.
+- `404 Not Found`: Returns an error message if the incident is not found.
+- `500 Internal Server Error`: Returns an error message if something goes wrong.
+
+**Example Result:**
+Below is an example image showing the result of this endpoint:
+
+![Delete Incident Result](./testingImage/deleteByID.png)
+
 
 ## Technologies Used
 - Node.js
