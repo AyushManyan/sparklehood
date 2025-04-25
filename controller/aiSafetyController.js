@@ -23,7 +23,24 @@ const createIncident = async (req, res) => {
 const getIncidents = async (req, res) => {
     try {
         const incidents = await AiSafetyModel.find();
+        if (incidents.length === 0) {
+            return res.status(404).json({ message: 'No incidents found' });
+        }
         res.status(200).json(incidents);
+    } catch (error) {
+        res.status(500).json({ message: 'Internal server error', error });
+    }
+}
+
+// function to get a single incident by ID
+const getIncidentById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const incident = await AiSafetyModel.findById(id);
+        if (!incident) {
+            return res.status(404).json({ message: 'Incident not found' });
+        }
+        res.status(200).json(incident);
     } catch (error) {
         res.status(500).json({ message: 'Internal server error', error });
     }
@@ -33,4 +50,5 @@ const getIncidents = async (req, res) => {
 module.exports = {
     createIncident,
     getIncidents,
+    getIncidentById,
 };

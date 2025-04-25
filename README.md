@@ -55,6 +55,16 @@ The Sparklehood AI Safety Incident Tracker is a Node.js-based application that a
 - `200 OK`: Returns a list of all incidents.
 - `500 Internal Server Error`: Returns an error message if something goes wrong.
 
+### GET /api/v1/incidents/:id
+**Description:** Retrieve a specific AI safety incident by its ID.  
+**Path Parameter:**
+- `id`: The unique identifier of the incident.
+
+**Response:**
+- `200 OK`: Returns the incident details.
+- `404 Not Found`: Returns an error message if the incident is not found.
+- `500 Internal Server Error`: Returns an error message if something goes wrong.
+
 ## Technologies Used
 - Node.js
 - Express.js
