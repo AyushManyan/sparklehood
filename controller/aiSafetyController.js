@@ -1,5 +1,6 @@
 const AiSafetyModel = require('../model/aiSafetyModel');
 
+// Function to create a new incident
 const createIncident = async (req, res) => {
     try {
         const { name, description, severity } = req.body;
@@ -18,7 +19,18 @@ const createIncident = async (req, res) => {
 }
 
 
+// Function to get all incidents
+const getIncidents = async (req, res) => {
+    try {
+        const incidents = await AiSafetyModel.find();
+        res.status(200).json(incidents);
+    } catch (error) {
+        res.status(500).json({ message: 'Internal server error', error });
+    }
+}
+
 
 module.exports = {
     createIncident,
+    getIncidents,
 };
