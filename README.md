@@ -12,7 +12,7 @@ The Sparklehood AI Safety Incident Tracker is a Node.js-based application that a
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/sparklehood.git
+    git clone https://github.com/AyushManyan/sparklehood.git
     cd sparklehood
     ```
 
