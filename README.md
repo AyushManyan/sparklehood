@@ -4,9 +4,15 @@
 The Sparklehood AI Safety Incident Tracker is a Node.js-based application that allows users to log and manage AI safety incidents. It provides an API to create and track incidents with details such as name, description, severity, and the time of reporting.
 
 ## Features
-- Create AI safety incidents with severity levels (`low`, `medium`, `high`).
-- Automatically records the time of incident reporting.
-- RESTful API design for easy integration.
+- Log AI safety incidents with detailed descriptions and severity levels (`low`, `medium`, `high`).
+- Automatically captures the timestamp of when an incident is reported.
+- Provides a RESTful API for seamless integration with other systems.
+- Supports CRUD operations for managing incidents efficiently.
+- Designed for scalability and ease of use.
+- Includes example responses for better understanding of API behavior.
+- Securely connects to MongoDB for data storage.
+- Environment variable configuration for flexible deployment.
+- Comprehensive documentation for developers.
 
 ## Installation
 
